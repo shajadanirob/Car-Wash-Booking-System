@@ -2,9 +2,9 @@ import { NextFunction, Request, Response } from "express";
 import catchAsync from "../utils/catchAsync";
 import AppError from "../errors/AppError";
 import httpStatus from "http-status";
-import { TUserRole } from "../modules/User/User.interface";
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import config from "../config";
+import { TUserRole } from "../modules/User/user.interface";
 const auth = (...requiredRoles: TUserRole[]) => {
     return catchAsync(async (req: Request, res: Response, next: NextFunction ) => {
       const token = req.headers.authorization

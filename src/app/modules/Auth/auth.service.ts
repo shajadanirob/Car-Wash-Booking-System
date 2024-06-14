@@ -2,8 +2,8 @@ import httpStatus from 'http-status';
 import jwt from 'jsonwebtoken';
 import AppError from '../../errors/AppError';
 import { TLoginUser } from './auth.interface';
-import { User } from '../User/user.model';
 import config from '../../config';
+import { User } from '../User/user.model';
 // import bcrypt from 'bcrypt';
 const loginUser = async (payload: TLoginUser) => {
   // checking if the user is exist
