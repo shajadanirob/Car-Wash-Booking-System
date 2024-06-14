@@ -1,5 +1,5 @@
 # Project Name
-
+Car-Wash-Booking-System
 [![Live Demo](https://img.shields.io/badge/demo-online-brightgreen)](LIVE_URL) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## Table of Contents
@@ -58,9 +58,12 @@ Before you begin, ensure you have met the following requirements:
     Create a `.env` file in the root directory and add your environment variables. For example:
     ```env
    PORT = 5000
-DATABASE_URL =mongodb+srv://Car-Wash-Booking-System:7kRdal1BojNvcNJU@cluster0.ul0jqdv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-NODE_ENV = development
-JWT_ACCESS_SECRET = 30300429b5a0ae16d2235935d0e9a39e457e9b7834a629b53b549dde49af263f
+   DATABASE_URL =mongodb+srv://Car-Wash-Booking-System:7kRdal1BojNvcNJU@cluster0.ul0jqdv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+   NODE_ENV = development
+   JWT_ACCESS_SECRET = 30300429b5a0ae16d2235935d0e9a39e457e9b7834a629b53b549dde49af263f
+
+
+
 
     ```
 
