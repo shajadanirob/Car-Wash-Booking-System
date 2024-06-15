@@ -33,11 +33,7 @@ const getSingleService = catchAsync(async (req, res) => {
 });
 const updateService = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const result =
-    await ServicesServices.updateServiceFromDB(
-      id,
-      req.body,
-    );
+  const result = await ServicesServices.updateServiceFromDB(id, req.body);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -64,5 +60,5 @@ export const serviceControllers = {
   getAllService,
   getSingleService,
   updateService,
-  deleteService
+  deleteService,
 };

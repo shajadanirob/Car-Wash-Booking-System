@@ -6,32 +6,32 @@ import auth from '../../middlewares/auth';
 import { USER_ROLE } from '../User/user.const';
 const router = express.Router();
 router.post(
-    '/services',
-    auth(USER_ROLE.admin),
-    validateRequest(ServiceValidation.createServiceValidationSchema),
-     serviceControllers.createService
-  );
-  router.get(
-    '/services/:id',
-    auth(USER_ROLE.admin , USER_ROLE.user),
-     serviceControllers.getSingleService
-  );
+  '/services',
+  auth(USER_ROLE.admin),
+  validateRequest(ServiceValidation.createServiceValidationSchema),
+  serviceControllers.createService,
+);
+router.get(
+  '/services/:id',
+  auth(USER_ROLE.admin, USER_ROLE.user),
+  serviceControllers.getSingleService,
+);
 
 router.get(
-    '/services',
-    auth(USER_ROLE.admin , USER_ROLE.user),
-     serviceControllers.getAllService
-  );
+  '/services',
+  auth(USER_ROLE.admin, USER_ROLE.user),
+  serviceControllers.getAllService,
+);
 router.patch(
-    '/services/:id',
-    auth(USER_ROLE.admin),
-    validateRequest(ServiceValidation.updateServiceValidationSchema),
-     serviceControllers.updateService
-  );
+  '/services/:id',
+  auth(USER_ROLE.admin),
+  validateRequest(ServiceValidation.updateServiceValidationSchema),
+  serviceControllers.updateService,
+);
 router.delete(
-    '/services/:id',
-    auth(USER_ROLE.admin),
-     serviceControllers.deleteService
-  );
+  '/services/:id',
+  auth(USER_ROLE.admin),
+  serviceControllers.deleteService,
+);
 
-  export const ServiceRoute = router
+export const ServiceRoute = router;

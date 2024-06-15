@@ -7,18 +7,12 @@ import auth from '../../middlewares/auth';
 const router = express.Router();
 
 router.post(
-    '/',
-    auth(USER_ROLE.user),
-    validateRequest(createBookingValidationSchema),
-    bookingController.createBooking
-  );
-router.get(
-    '/',
-    auth(USER_ROLE.admin),
-    bookingController.getAllBooking
-  );
-  router.get('/', 
-    auth(USER_ROLE.admin),
-    bookingController.getUserBooking);
+  '/',
+  auth(USER_ROLE.user),
+  validateRequest(createBookingValidationSchema),
+  bookingController.createBooking,
+);
+router.get('/', auth(USER_ROLE.admin), bookingController.getAllBooking);
+router.get('/', auth(USER_ROLE.admin), bookingController.getUserBooking);
 
- export const bookingRoute = router
+export const bookingRoute = router;
