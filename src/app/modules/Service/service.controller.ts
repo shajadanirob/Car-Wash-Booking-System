@@ -10,6 +10,7 @@ const createService = catchAsync(async (req, res) => {
     success: true,
     message: 'Service created successfully',
     data: result,
+    
   });
 });
 const getAllService = catchAsync(async (req, res) => {
@@ -19,6 +20,7 @@ const getAllService = catchAsync(async (req, res) => {
     success: true,
     message: 'Service retrieved successfully',
     data: result,
+    
   });
 });
 const getSingleService = catchAsync(async (req, res) => {
@@ -29,6 +31,7 @@ const getSingleService = catchAsync(async (req, res) => {
     success: true,
     message: 'Service retrieved successfully',
     data: result,
+    
   });
 });
 const updateService = catchAsync(async (req, res) => {
@@ -40,6 +43,7 @@ const updateService = catchAsync(async (req, res) => {
     success: true,
     message: 'Service updated successfully',
     data: result,
+    
   });
 });
 
@@ -52,6 +56,7 @@ const deleteService = catchAsync(async (req, res) => {
     success: true,
     message: 'Service deleted successfully',
     data: result,
+    
   });
 });
 

@@ -3,7 +3,7 @@ import { UserRoutes } from '../modules/User/user.route';
 import { ServiceRoute } from '../modules/Service/service.route';
 import { slotsRoutes } from '../modules/Slots/slots.route';
 import { bookingRoute } from '../modules/Booking/booking.route';
-import { AuthRoute } from '../modules/Auth/auth.route';
+import { AuthRoutes } from '../modules/Auth/auth.route';
 
 const router = Router();
 const moduleRoutes = [
@@ -17,7 +17,7 @@ const moduleRoutes = [
   },
 
   {
-    path: '/service',
+    path: '/',
     route: slotsRoutes,
   },
   {
@@ -30,7 +30,7 @@ const moduleRoutes = [
   },
   {
     path: '/auth',
-    route: AuthRoute,
+    route: AuthRoutes,
   },
 ];
 moduleRoutes.forEach((route) => router.use(route.path, route.route));

@@ -10,6 +10,7 @@ const createBooking = catchAsync(async (req, res) => {
     success: true,
     message: 'Booking created successfully',
     data: result,
+   
   });
 });
 
@@ -20,6 +21,7 @@ const getAllBooking = catchAsync(async (req, res) => {
     success: true,
     message: 'All bookings retrieved successfully',
     data: result,
+   
   });
 });
 const getUserBooking = catchAsync(async (req, res) => {
@@ -30,6 +32,7 @@ const getUserBooking = catchAsync(async (req, res) => {
     success: true,
     message: 'User bookings retrieved successfully',
     data: result,
+  
   });
 });
 

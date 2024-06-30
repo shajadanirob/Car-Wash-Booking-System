@@ -10,6 +10,7 @@ const createSlots = catchAsync(async (req, res) => {
     success: true,
     message: 'Slots created successfully',
     data: result,
+    
   });
 });
 
@@ -24,6 +25,7 @@ const getAvailableSlots = catchAsync(async (req, res) => {
     success: true,
     message: 'Available slots retrieved successfully',
     data: slots,
+    
   });
 });
 

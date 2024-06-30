@@ -10,6 +10,7 @@ const createUser = async (req: Request, res: Response) => {
     success: true,
     message: 'User registered successfully',
     data: result,
+    
   });
 };
 

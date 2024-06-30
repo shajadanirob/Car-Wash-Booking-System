@@ -5,13 +5,16 @@ import httpStatus from 'http-status';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import config from '../config';
 import { TUserRole } from '../modules/User/user.interface';
+
 const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    const token = req.headers.authorization;
-    console.log(token);
-    if (!token) {
+    const authHeader = req.headers.authorization;
+    console.log(authHeader);
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
       throw new AppError(httpStatus.UNAUTHORIZED, 'You have no authorization');
     }
+
+    const token = authHeader.split(' ')[1];
 
     jwt.verify(
       token,
@@ -27,7 +30,7 @@ const auth = (...requiredRoles: TUserRole[]) => {
         if (requiredRoles && !requiredRoles.includes(role)) {
           throw new AppError(
             httpStatus.UNAUTHORIZED,
-            'You are not authorized  hi!',
+            'You are not authorized!',
           );
         }
 

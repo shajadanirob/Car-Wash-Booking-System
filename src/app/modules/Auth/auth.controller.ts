@@ -2,23 +2,21 @@ import httpStatus from 'http-status';
 import catchAsync from '../../utils/catchAsync';
 import sendResponse from '../../utils/sendResponse';
 import { AuthServices } from './auth.service';
-import config from '../../config';
+import sendResponseUser from '../../utils/sendResponseUser';
 
 const loginUser = catchAsync(async (req, res) => {
   const result = await AuthServices.loginUser(req.body);
-  const { refreshToken} = result ;
-  res.cookie('refreshToken', refreshToken, {
-    secure: config.NODE_ENV === 'production',
-    httpOnly: true,
-  });
+  const { accessToken, user } = result;
 
-  sendResponse(res, {
+  sendResponseUser(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'User is logged in succesfully!',
-    data: result,
+    message: 'User logged in successfully!',
+    token: accessToken,
+    data: user,
   });
 });
+
 const refreshToken = catchAsync(async (req, res) => {
   const { refreshToken } = req.cookies;
   const result = await AuthServices.refreshToken(refreshToken);
@@ -26,12 +24,13 @@ const refreshToken = catchAsync(async (req, res) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Access token is retrieved succesfully!',
+    message: 'Access token is retrieved successfully!',
     data: result,
+   
   });
 });
 
 export const AuthControllers = {
   loginUser,
-  refreshToken
+  refreshToken,
 };
