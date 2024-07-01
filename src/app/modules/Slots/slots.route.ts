@@ -15,7 +15,7 @@ router.post(
 
 router.get(
   '/slots/availability',
-  auth(USER_ROLE.admin, USER_ROLE.user),
+  
   slotsControllers.getAvailableSlots,
 );
 export const slotsRoutes = router;

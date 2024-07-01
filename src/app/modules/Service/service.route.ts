@@ -13,13 +13,13 @@ router.post(
 );
 router.get(
   '/services/:id',
-  auth(USER_ROLE.admin, USER_ROLE.user),
+
   serviceControllers.getSingleService,
 );
 
 router.get(
   '/services',
-  auth(USER_ROLE.admin, USER_ROLE.user),
+ 
   serviceControllers.getAllService,
 );
 router.patch(

@@ -13,6 +13,6 @@ router.post(
   bookingController.createBooking,
 );
 router.get('/', auth(USER_ROLE.admin), bookingController.getAllBooking);
-router.get('/', auth(USER_ROLE.admin), bookingController.getUserBooking);
+router.get('/', auth(USER_ROLE.user), bookingController.getUserBooking);
 
 export const bookingRoute = router;
